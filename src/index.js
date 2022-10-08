@@ -54,3 +54,22 @@ function searchCityTemp(city) {
 
   axios.get(apiUrl).then(displayWeather);
 }
+function showPosition(position) {
+  console.log(position.coords.latitude);
+  console.log(position.coords.longitude);
+}
+navigator.geolocation.getCurrentPosition(showPosition);
+function searchLocation(position) {
+  let apiKey = "fdc5f58fba87bbe9f0f5d9037475e3b8";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayWeather);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+let shareLocationButton = document.querySelector("#share-location-button");
+shareLocationButton.addEventListener("click", getCurrentLocation);
