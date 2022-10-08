@@ -24,7 +24,8 @@ body {
   max-width: 85%;
 }
 .button {
-  display: in-line;
+  display: block;
+  padding-left: 100px;
 }
 .card-1 {
   background: linear-gradient(
