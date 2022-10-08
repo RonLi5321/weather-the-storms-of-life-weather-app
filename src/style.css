@@ -23,10 +23,6 @@ body {
   text-align: center;
   max-width: 85%;
 }
-.button {
-  display: block;
-  padding-left: 100px;
-}
 .card-1 {
   background: linear-gradient(
     89.9deg,
