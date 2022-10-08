@@ -43,7 +43,7 @@ function searchCityValue(event) {
   searchCityTemp(input.value);
 }
 let form = document.querySelector("form");
-form.addEventListener("click", searchCityValue);
+form.addEventListener("button", searchCityValue);
 form.addEventListener("submit", searchCityValue);
 
 function searchCityTemp(city) {
