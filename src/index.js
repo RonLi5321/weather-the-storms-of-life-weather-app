@@ -47,7 +47,6 @@ function searchCityValue(event) {
 let form = document.querySelector("form");
 form.addEventListener("button", searchCityValue);
 form.addEventListener("submit", searchCityValue);
-form.button.addEventListener("submit", searchCityValue);
 
 function searchCityTemp(city) {
   let units = "imperial";
