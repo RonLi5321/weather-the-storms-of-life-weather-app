@@ -29,7 +29,7 @@ todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 function displayWeather(response) {
   let humidity = Math.round(response.data.main.humidity);
   let humidElement = document.querySelector("#today-humidity");
-  humidElement.innerHTML = `${humidity}`;
+  humidElement.innerHTML = `${humidity}%`;
   let temperature = Math.round(response.data.main.temp);
   let tempElement = document.querySelector("#today-temp");
   tempElement.innerHTML = `${temperature}`;
