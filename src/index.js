@@ -40,7 +40,7 @@ function displayWeather(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   let wind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind-speed");
-  windElement.innerHTML = `Wind:${wind}km/hr`;
+  windElement.innerHTML = `${wind}km/hr`;
 }
 
 function searchCityValue(event) {
