@@ -121,6 +121,5 @@ body {
   height: auto;
 }
 .wind {
-  text-align: center;
-  font-size: 20px;
+  width: 20px;
 }
