@@ -89,6 +89,9 @@ body {
   text-align: center;
   width: 20px;
 }
+.li:first-letter {
+  text-transform: capitalize;
+}
 .location-button {
   font-size: 20px;
 }
