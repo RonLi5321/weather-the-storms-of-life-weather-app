@@ -101,7 +101,10 @@ body {
   font-size: 18px;
   margin-left: 40px;
 }
-
+.today-wind {
+  text-align: center;
+  width: 30px;
+}
 .weather-app {
   border: 10px;
   max-width: auto;
@@ -119,8 +122,4 @@ body {
   bottom: 0;
   max-width: 100%;
   height: auto;
-}
-.wind {
-  text-align: center;
-  width: 30px;
 }
