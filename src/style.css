@@ -67,6 +67,7 @@ body {
 .description {
   text-align: center;
   padding-top: 0;
+  padding-bottom: 0;
 }
 .five-day-projection {
   display: inline-block;
