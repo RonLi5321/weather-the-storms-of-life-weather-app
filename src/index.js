@@ -38,7 +38,7 @@ function displayWeather(response) {
   tempElement.innerHTML = `${temperature}`;
   let descriptionElement = document.querySelector("#weather-description");
   descriptionElement.innerHTML = response.data.weather[0].description;
-  let wind = Math.round(response.data.main.wind.speed);
+  let wind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = `Wind:${wind}km/hr`;
 }
