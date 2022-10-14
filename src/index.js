@@ -29,7 +29,7 @@ todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   output.innerHTML = response.data.name;
-  let wind = Math.round(response.data.wind.speed);
+  let wind = Math.round(response.data.main.wind.speed);
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = `Wind:${wind}km/hr`;
   let humidity = Math.round(response.data.main.humidity);
