@@ -121,5 +121,6 @@ body {
   height: auto;
 }
 .wind {
-  width: 20px;
+  display: inline;
+  text-align: left;
 }
