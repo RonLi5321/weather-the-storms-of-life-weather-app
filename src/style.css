@@ -15,7 +15,7 @@ body {
     rgb(255, 255, 231) 100.2%
   );
   font-family: "Crimson Text", serif;
-  color: blue;
+  color: black;
 }
 a:link {
   text-decoration: none;
@@ -81,7 +81,7 @@ a:hover {
   margin-left: 600px;
 }
 .currentTemp {
-  color: #ffb7c5;
+  color: blue;
 }
 .date {
   display: inline-block;
