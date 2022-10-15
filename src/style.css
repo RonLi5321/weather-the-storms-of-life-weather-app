@@ -40,9 +40,6 @@ a:hover {
   text-align: center;
   max-width: 85%;
 }
-.card:hover {
-  transform: scale(0.5);
-}
 .card-1 {
   background: linear-gradient(
     89.9deg,
