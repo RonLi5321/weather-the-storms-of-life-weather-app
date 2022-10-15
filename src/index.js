@@ -1,5 +1,5 @@
 function formatDate(timestamp) {
-  let date = now.getDate();
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -34,7 +34,7 @@ function formatDate(timestamp) {
   let month = months[date.getMonth()];
   let day = days[date.getDay()];
   let year = date.getFullYear();
-  return `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
+  return `${date}`;
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
