@@ -51,7 +51,6 @@ function displayWeather(response) {
     response.data.weather[0].description
   );
 }
-axios.get(apiUrl).then(displayWeather);
 function searchCityValue(event) {
   event.preventDefault();
   let input = document.querySelector("#search-form-input");
