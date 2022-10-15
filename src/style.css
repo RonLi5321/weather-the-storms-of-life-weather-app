@@ -81,12 +81,8 @@ a:active {
 .col-m-8 {
   margin-left: 600px;
 }
-.currentTemp.active {
-  color: black;
-  cursor: default;
-}
-.currentTemp.active:hover {
-  text-decoration: none;
+.currentTemp {
+  color: #ffb7c5;
 }
 .date {
   display: inline-block;
