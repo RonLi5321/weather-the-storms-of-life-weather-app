@@ -1,5 +1,9 @@
 function formatDate(timestamp) {
-  return "Saturday 10:00";
+  let date = new Date(timestamp);
+  let hours = timestamp.getHours();
+  let minutes = timestamp.getMinuts();
+  let seconds = timestamp.getSecons();
+  let year = timestamp.getFullYear();
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
