@@ -60,19 +60,19 @@ let form = document.querySelector("form");
 form.addEventListener("button", searchCityValue);
 form.addEventListener("submit", searchCityValue);
 
-function showFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#today-temp");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
 function showCelsiusTemperature(event) {
   event.preventDefault();
   let celsiusTemperature = (fahrenheitTemperature - 32) / 1.8;
   let temperatureElement = document.querySelector("#today-temp");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#today-temp");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
 let fahrenheitTemperature = null;
+
 let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
 let fahrenheitTemp = document.querySelector("#celsius-temp");
