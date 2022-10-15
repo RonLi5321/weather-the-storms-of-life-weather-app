@@ -2,8 +2,9 @@ function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   let minutes = date.getMinuts();
-  let seconds = date.getSecons();
+  let day = day.getDay();
   let year = date.getFullYear();
+  return `${day} ${hours}:${minutes}`;
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
