@@ -62,7 +62,8 @@ form.addEventListener("submit", searchCityValue);
 function showCelsiusTemperature(event) {
   event.preventDefault();
   let celsiusTemperature = (80 - 32) / 1.8;
-  alert(celsiusTemperature);
+  let tempElement = document.querySelector("#celsius-temp");
+  tempElement.innerHTML = Math.round(celsiusTemperature);
 }
 let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
