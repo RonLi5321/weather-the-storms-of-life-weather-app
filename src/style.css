@@ -23,11 +23,11 @@ a:link {
 
 a:visited {
   text-decoration: none;
-  color: pink;
 }
 
 a:hover {
   text-decoration: none;
+  color: pink;
 }
 
 a:active {
