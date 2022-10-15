@@ -41,6 +41,9 @@ function displayWeather(response) {
   let wind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = `${wind}km/hr`;
+  let iconElementAPI = response.data.weather[0].icon;
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("src", getIcon(iconElementAPI));
 }
 function getIcon(iconElementAPI) {
   if ((iconElementAPI === "01d", "01n")) {
