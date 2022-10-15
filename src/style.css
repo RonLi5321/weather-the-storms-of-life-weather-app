@@ -18,7 +18,7 @@ body {
 }
 a:link {
   text-decoration: none;
-  cursor: none;
+  cursor: pointer;
 }
 
 a:visited {
