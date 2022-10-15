@@ -1,32 +1,6 @@
-let now = new Date();
-console.log(now.getDate());
-
-let todayDate = document.querySelector("#todayDate");
-let date = now.getDate();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let seconds = now.getSeconds();
-let year = now.getFullYear();
-
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[now.getDay()];
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[now.getMonth()];
-todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
-
+function formatDate(timestamp) {
+  return "Saturday 10:00";
+}
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   output.innerHTML = response.data.name;
@@ -42,6 +16,7 @@ function displayWeather(response) {
   let wind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = `${wind}km/hr`;
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let iconElement = document.querySelector("#weather-icon");
   iconElement.setAttribute(
     "src",
