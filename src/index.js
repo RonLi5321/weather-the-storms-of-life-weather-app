@@ -59,6 +59,14 @@ let form = document.querySelector("form");
 form.addEventListener("button", searchCityValue);
 form.addEventListener("submit", searchCityValue);
 
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (80 - 32) / 1.8;
+  alert(fahrenheitTemperature);
+}
+let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
+fahrenheitTemp.addEventListener("click", showFahrenheitTemperature);
+
 function searchCityTemp(city) {
   let units = "imperial";
   let apiKey = `b0b9a67412cc5694fd13908f533da803`;
