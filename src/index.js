@@ -17,9 +17,24 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[now.getMonth()];
   let day = days[date.getDay()];
   let year = date.getFullYear();
-  return `${day} ${hours}:${minutes}`;
+  return `${day}, ${month} ${date}, ${hours}:${minutes}`;
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
