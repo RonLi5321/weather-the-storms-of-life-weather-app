@@ -34,7 +34,7 @@ function formatDate(timestamp) {
   let month = months[date.getMonth()];
   let day = days[date.getDay()];
   let year = date.getFullYear();
-  return `${date}`;
+  todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
