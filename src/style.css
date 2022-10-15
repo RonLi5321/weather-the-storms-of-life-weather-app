@@ -62,6 +62,10 @@ a:hover {
   margin-left: 725px;
   margin-top: 1px;
 }
+.card-header-reminders {
+  display: block;
+  text-align: center;
+}
 .chosenCity {
   display: block;
   text-align: center;
