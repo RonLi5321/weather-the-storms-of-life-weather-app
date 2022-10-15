@@ -20,22 +20,22 @@ body {
 a:link {
   text-decoration: none;
   cursor: pointer;
-  font-size: medium;
+  font-size: large;
 }
 
 a:visited {
   text-decoration: none;
-  font-size: medium;
+  font-size: large;
 }
 a:active {
   text-decoration: none;
   color: #ffb7c5;
-  font-size: medium;
+  font-size: large;
 }
 a:hover {
   text-decoration: none;
   color: #ffb7c5;
-  font-size: medium;
+  font-size: large;
 }
 
 .block-quote {
