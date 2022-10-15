@@ -2,6 +2,7 @@ function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   let minutes = date.getMinutes();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = date.getDay();
   let year = date.getFullYear();
   return `${day} ${hours}:${minutes}`;
