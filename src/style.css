@@ -28,7 +28,6 @@ a:visited {
 a:hover {
   text-decoration: none;
   color: #ffb7c5;
-  cursor: none;
 }
 
 a:active {
