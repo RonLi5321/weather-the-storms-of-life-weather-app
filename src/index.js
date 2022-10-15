@@ -69,7 +69,7 @@ function showCelsiusTemperature(event) {
 function showFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#today-temp");
-  temperatureElement.innerHTML = fahrenheitTemperatrue;
+  temperatureElement.innerHTML = fahrenheitTemperature;
 }
 let fahrenheitTemperature = null;
 
