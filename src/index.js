@@ -62,14 +62,9 @@ form.addEventListener("submit", searchCityValue);
 
 function showCelsiusTemperature(event) {
   event.preventDefault();
-  let celsiusTemperature = (fahrenheitTemperature - 32) / 1.8;
   let temperatureElement = document.querySelector("#today-temp");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-function showFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#today-temp");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  let cTemp = (fahrenheitTemperature - 32) / 1.8;
+  temperatureElement.innerHTML = Math.round(cTemp);
 }
 let fahrenheitTemperature = null;
 
