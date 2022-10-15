@@ -50,6 +50,7 @@ function displayWeather(response) {
     "alt",
     response.data.weather[0].description
   );
+  displayIcon(response);
 }
 function searchCityValue(event) {
   event.preventDefault();
