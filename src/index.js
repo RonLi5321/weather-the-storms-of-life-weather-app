@@ -48,7 +48,6 @@ function displayWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-
 function searchCityValue(event) {
   event.preventDefault();
   let input = document.querySelector("#search-form-input");
