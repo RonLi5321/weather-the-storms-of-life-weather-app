@@ -41,19 +41,14 @@ function displayWeather(response) {
   let wind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = `${wind}km/hr`;
-}
-function displayIcon(description)
   let iconElement = document.querySelector("#weather-icon");
-  iconElement.innerHTML = 
-  if (description === "clear sky"){
-    return "src/sunny.png"
-  } else {
-    if (description === "few clouds", "scattered clouds", "broken clouds") {
-      return "src/clouds.png"
-    }else{ 
-      if (description === "shower rain", "rain") {
-        return "src/rain.png"
-      }
+  iconElement.setAttribute("src, `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  ); iconElement.setAttribute("alt", response.data.weather[0].description);
+
+
+
+      
+  
 
 
 
