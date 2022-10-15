@@ -48,8 +48,10 @@ function displayIcon(response)
     return "src/sunny.png"
   } else {
     if (description === "few clouds", "scattered clouds", "broken clouds") {
-      return "src/clouds.png"
+      return "src/clouds.png"}
+      
     }
+    
 
 
   
