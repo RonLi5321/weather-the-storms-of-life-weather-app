@@ -44,7 +44,7 @@ function displayWeather(response) {
   let iconElement = document.querySelector("#weather-icon");
   iconElement.setAttribute(
     "src",
-    `src/${response.data.weather[0].description}.png`
+    `src/images/${response.data.weather[0].description}.png`
   );
 }
 function searchCityValue(event) {
