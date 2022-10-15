@@ -31,7 +31,7 @@ function formatDate(timestamp) {
     "November",
     "December",
   ];
-  let month = months[now.getMonth()];
+  let month = months[date.getMonth()];
   let day = days[date.getDay()];
   let year = date.getFullYear();
   return `${day}, ${month} ${date}, ${year} ${hours}:${minutes} `;
