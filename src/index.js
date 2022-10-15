@@ -33,7 +33,8 @@ function displayWeather(response) {
   let humidity = Math.round(response.data.main.humidity);
   let humidElement = document.querySelector("#today-humidity");
   humidElement.innerHTML = `${humidity}%`;
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
   let tempElement = document.querySelector("#today-temp");
   tempElement.innerHTML = `${temperature}`;
   let descriptionElement = document.querySelector("#weather-description");
@@ -65,6 +66,7 @@ function showCelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#today-temp");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+let fahrenheitTemperature = null;
 let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
 
