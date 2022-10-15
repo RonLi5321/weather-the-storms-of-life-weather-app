@@ -42,16 +42,19 @@ function displayWeather(response) {
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = `${wind}km/hr`;
 }
-function displayIcon(response)
+function displayIcon(description)
   let iconElement = document.querySelector("#weather-icon");
+  iconElement.innerHTML = 
   if (description === "clear sky"){
     return "src/sunny.png"
   } else {
     if (description === "few clouds", "scattered clouds", "broken clouds") {
-      return "src/clouds.png"}
-      
-    }
-    
+      return "src/clouds.png"
+    }else{ 
+      if (description === "shower rain", "rain") {
+        return "src/rain.png"
+      }
+
 
 
   
