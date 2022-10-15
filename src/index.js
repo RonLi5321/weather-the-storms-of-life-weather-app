@@ -44,12 +44,9 @@ function displayWeather(response) {
   let iconElement = document.querySelector("#weather-icon");
   iconElement.innerHTML.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/04d@2x.png`
+    `http://openweathermap.org/img/wn${response.data.weather[0].icon}@2x.png`
   );
-  iconElement.innerHTML.setAttribute(
-    "alt",
-    response.data.weather[0].description
-  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
   displayIcon(response);
 }
 function searchCityValue(event) {
