@@ -76,7 +76,7 @@ let fahrenheitTemperature = null;
 let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
 let fahrenheitTemp = document.querySelector("#celsius-temp");
-fahrenheitTemp.addEventListener("click", showCelsiusTemperature);
+fahrenheitTemp.addEventListener("click", showFahrenheitTemperature);
 
 function searchCityTemp(city) {
   let units = "imperial";
