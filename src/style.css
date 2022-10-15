@@ -65,6 +65,7 @@ body {
 }
 .currentTemp.active {
   color: black;
+  cursor: default;
 }
 .date {
   display: inline-block;
