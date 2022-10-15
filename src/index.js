@@ -33,7 +33,7 @@ function displayWeather(response) {
   let humidity = Math.round(response.data.main.humidity);
   let humidElement = document.querySelector("#today-humidity");
   humidElement.innerHTML = `${humidity}%`;
-  celsiusTemperature = response.data.main.temp;
+  fahrenheitTemperature = response.data.main.temp;
   let temperature = Math.round(celsiusTemperature);
   let tempElement = document.querySelector("#today-temp");
   tempElement.innerHTML = `${temperature}`;
@@ -62,13 +62,15 @@ form.addEventListener("submit", searchCityValue);
 
 function showCelsiusTemperature(event) {
   event.preventDefault();
-  let celsiusTemperature = (80 - 32) / 1.8;
+  let celsiusTemperature = (fahrenheitTemperature - 32) / 1.8;
   let temperatureElement = document.querySelector("#today-temp");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 let fahrenheitTemperature = null;
 let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
+let fahrenheitTemp = document.querySelector("#celsius-temp");
+fahrenheitTemp.addEventListener("click", showCelsiusTemperature);
 
 function searchCityTemp(city) {
   let units = "imperial";
