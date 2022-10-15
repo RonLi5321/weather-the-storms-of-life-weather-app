@@ -41,16 +41,12 @@ function displayWeather(response) {
   let wind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = `${wind}km/hr`;
-  let iconElementAPI = response.data.weather[0].icon;
+  let iconElement = document.querySelector("#weather-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  iconElement.setAttribute("src", getIcon(iconElementAPI));
-}
-function getIcon(iconElementAPI) {
-  if ((iconElementAPI === "01d", "01n")) {
-    return `src/images.clear-sky.png`;
-  } else if ((iconElementAPI === "02d", "02n")) {
-    return `src/images.few-clouds.png`;
-  }
 }
 function searchCityValue(event) {
   event.preventDefault();
