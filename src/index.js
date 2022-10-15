@@ -16,7 +16,7 @@ function displayWeather(response) {
   let wind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = `${wind}km/hr`;
-  let dateElement = document.querySelector("#today-date");
+  let dateElement = document.querySelector("#todayDate");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let iconElement = document.querySelector("#weather-icon");
   iconElement.setAttribute(
