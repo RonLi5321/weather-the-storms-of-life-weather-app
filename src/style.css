@@ -20,7 +20,6 @@ body {
 a:link {
   text-decoration: none;
   cursor: pointer;
-  color: black;
 }
 
 a:visited {
@@ -30,8 +29,9 @@ a:active {
   text-decoration: none;
   color: #ffb7c5;
 }
-a:active:hover {
+a:hover {
   text-decoration: none;
+  color: #ffb7c5;
 }
 
 .block-quote {
