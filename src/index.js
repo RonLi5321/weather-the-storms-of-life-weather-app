@@ -59,13 +59,13 @@ let form = document.querySelector("form");
 form.addEventListener("button", searchCityValue);
 form.addEventListener("submit", searchCityValue);
 
-function showFahrenheitTemperature(event) {
+function showCelsiusTemperature(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (80 - 32) / 1.8;
-  alert(fahrenheitTemperature);
+  let celsiusTemperature = (80 - 32) / 1.8;
+  alert(celsiusTemperature);
 }
-let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
-fahrenheitTemp.addEventListener("click", showFahrenheitTemperature);
+let celsiusTemp = document.querySelector("#celsius-temp");
+celsiusTemp.addEventListener("click", showCelsiusTemperature);
 
 function searchCityTemp(city) {
   let units = "imperial";
