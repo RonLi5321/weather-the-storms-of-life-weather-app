@@ -42,7 +42,7 @@ function displayWeather(response) {
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = `${wind}km/hr`;
   let iconElement = document.querySelector("#weather-icon");
-  iconElement.setAttribute("src", `src/rain.png`);
+  iconElement.setAttribute("src", "src/rain.png");
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 function searchCityValue(event) {
