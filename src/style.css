@@ -19,6 +19,7 @@ body {
 a:link {
   text-decoration: none;
   cursor: pointer;
+  color: pink;
 }
 
 a:visited {
