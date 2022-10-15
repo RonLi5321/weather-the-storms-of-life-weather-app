@@ -67,6 +67,9 @@ body {
   color: black;
   cursor: default;
 }
+.currentTemp.active:hover {
+  text-decoration: none;
+}
 .date {
   display: inline-block;
   text-align: center;
