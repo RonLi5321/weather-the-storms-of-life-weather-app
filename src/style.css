@@ -89,7 +89,7 @@ a:hover {
 }
 .date {
   display: inline-block;
-  text-align: center;
+  text-align: left;
 }
 .description {
   text-align: center;
