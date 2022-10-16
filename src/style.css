@@ -115,6 +115,9 @@ a:hover {
   text-align: center;
   color: lightcoral;
 }
+.high-and-low {
+  font-size: 20px;
+}
 .humidity {
   text-align: center;
   width: 20px;
