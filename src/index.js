@@ -42,7 +42,7 @@ let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = `<h4>
+  forecastElement.innerHTML = `
       <div class="container-fluid">
       <div class="five-day-projection" id="forecast">
        <div class="row">
@@ -122,7 +122,7 @@ function displayForecast() {
             80%
             </div>
     </div>
-    </h4>`;
+    `;
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
