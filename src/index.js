@@ -41,8 +41,8 @@ let months = [
 let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = `
+  let h4Element = document.querySelector("#forecast");
+  h4Element.innerHTML = `
       <div class="container-fluid">
       <div class="five-day-projection" id="forecast">
        <div class="row">
@@ -59,70 +59,8 @@ function displayForecast() {
             <br>
             <img class="humidity" src="src/images/humidity.png" alt="Humidity Icon">
             80%
-            
           </div>
-        </div>
-            <div class="card" style="width: 12rem;">
-        <div class="card-header text-secondary" > Monday
-          </div>
-          <div class="col-sm-15">
-          </div>
-                <div class="card-body">
-          <img id="second-icon" src="src/images/partlycloudy.png" alt="Rainy"><br>
-            <div class = high-and-low> <span class="temp-high">76°F</span>  <span class="temp-low"> 66°F</span>  </div>
-            <br>
-          
-            <br>
-            <img class="humidity" src="src/images/humidity.png" alt="Humidity">
-            80%
-            </div>
-          </div>
-            <div class="card" style="width: 12rem;">
-        <div class="card-header text-secondary" > Tuesday
-          </div>
-            <div class="col-sm-15">
-              </div>
-                <div class="card-body">
- <img id="second-icon" src="src/images/partlycloudy.png" alt="Rainy"><br>
-            <div class = high-and-low> <span class="temp-high"> 70°F</span>  <span class="temp-low"> 60°F</span></div>
-            <br>
-            
-            <br>
-            <img class="humidity" src="src/images/humidity.png" alt="Partly Cloudy">
-            80%
-            </div>
-          </div>
-            <div class="card" style="width: 12rem;">
-        <div class="card-header text-secondary"> Wednesday
-        </div>
-            <div class="col-sm-15">
-              </div>
-                <div class="card-body">
-  <img id="second-icon" src="src/images/partlycloudy.png" alt="Rainy"><br>
-          <div class = high-and-low> <span class="temp-high">73°F</span> <span class="temp-low">63°F</span> </div>
-            <br>
-            
-            <br>
-            <img class="humidity" src="src/images/humidity.png" alt="Humidity">
-            80%
-                </div>
-              </div>
-            <div class="card" style="width: 12rem;">
-        <div class="card-header text-secondary"> Thursday
-          </div>
-            <div class="col-sm-15">
-              </div>
-                <div class="card-body">
-<img id="second-icon" src="src/images/partlycloudy.png" alt="Rainy"><br>
-           <div class = high-and-low> <span class="temp-high">75°F <span class="temp-low">65°F</span></div>
-            <br>
-           
-            <br>
-            <img class="humidity" src="src/images/humidity.png" alt="Partly Cloudy">
-            80%
-            </div>
-    </div>
-    `;
+        </div>`;
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
