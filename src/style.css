@@ -141,6 +141,12 @@ a:hover {
 .sunny {
   width: 120px;
 }
+.temp-high {
+  color: palevioletred;
+}
+.temp-low {
+  color: lightcoral;
+}
 .today-date {
   display: block;
   text-align: left;
