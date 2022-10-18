@@ -171,7 +171,6 @@ function showFahrenheitTemperature(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 let fahrenheitTemperature = null;
-displayForecast();
 let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
 let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
@@ -184,3 +183,4 @@ function searchCityTemp(city) {
 
   axios.get(apiUrl).then(displayWeather);
 }
+displayForecast();
