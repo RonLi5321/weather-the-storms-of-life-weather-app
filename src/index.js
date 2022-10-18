@@ -101,5 +101,3 @@ let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
 let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
 fahrenheitTemp.addEventListener("click", showFahrenheitTemperature);
-
-displayForecast();
