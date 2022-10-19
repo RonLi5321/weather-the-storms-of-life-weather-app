@@ -41,10 +41,6 @@ let months = [
 let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = "Forecast";
-}
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   output.innerHTML = response.data.name;
@@ -68,7 +64,6 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   let dateElement = document.querySelector("#todayDate");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  getForecast(response.data.coord);
 }
 function searchCityValue(event) {
   event.preventDefault();
