@@ -65,6 +65,13 @@ function displayWeather(response) {
   let dateElement = document.querySelector("#todayDate");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
+function displayWeatherIcon() {
+  if (weatherDescription === "Clear") {
+    document.querySelector(
+      "#weather-icon"
+    ).style.backgroundImage = `src/images/clear-sky.png`;
+  }
+}
 function searchCityValue(event) {
   event.preventDefault();
   let input = document.querySelector("#search-form-input");
