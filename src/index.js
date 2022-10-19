@@ -66,19 +66,20 @@ function displayWeather(response) {
   let dateElement = document.querySelector("#todayDate");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
-function searchCityTemp(city) {
-  let units = "imperial";
-  let apiKey = `b0b9a67412cc5694fd13908f533da803`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
-  axios.get(apiUrl).then(displayWeather);
-}
 function searchCityValue(event) {
   event.preventDefault();
   let input = document.querySelector("#search-form-input");
   let output = document.querySelector("#chosen-city");
   output.innerHTML = input.value;
   searchCityTemp(input.value);
+}
+function searchCityTemp(city) {
+  let units = "imperial";
+  let apiKey = `b0b9a67412cc5694fd13908f533da803`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(displayWeather);
 }
 function showCelsiusTemperature(event) {
   event.preventDefault();
@@ -101,5 +102,3 @@ let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
 let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
 fahrenheitTemp.addEventListener("click", showFahrenheitTemperature);
-
-displayWeather();
