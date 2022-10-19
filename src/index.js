@@ -40,7 +40,10 @@ let months = [
 ];
 let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
-
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = h4.innerHTML;
+}
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   output.innerHTML = response.data.name;
@@ -103,5 +106,6 @@ function searchCityTemp(city) {
 function getForecast(coordinates) {
   let apiKey = `b0b9a67412cc5694fd13908f533da803`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat={coordinates.lat}&lon={coordinates.lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 getForecast(response.data.coord);
