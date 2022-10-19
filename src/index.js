@@ -94,7 +94,8 @@ let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
 fahrenheitTemp.addEventListener("click", showFahrenheitTemperature);
 function searchCityTemp(city) {
   let units = "imperial";
-  let apiKey = `b0b9a67412cc5694fd13908f533da803`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  let query = `${city}`;
+  let key = `8eddda0f7cctb6ac729734523f46ob41`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${key}&units=${units}`;
+  axios.get(apiUrl).then(displayWeather);
 }
-axios.get(apiUrl).then(displayWeather);
