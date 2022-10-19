@@ -69,8 +69,9 @@ function displayWeatherIcon() {
   if (weatherDescription === "Clear-Sky") {
     document.querySelector(
       "#weather-icon"
-    ).style.backgroundImage = `src/images/clear-sky.png`;
+    ).style.backgroundImage = `images/clear-sky.png`;
   }
+  displayWeatherIcon();
 }
 function searchCityValue(event) {
   event.preventDefault();
