@@ -64,6 +64,7 @@ a:hover {
 }
 
 .card-header-reminders {
+  padding-top: 10px;
   display: block;
   text-align: center;
   font-size: 30px;
