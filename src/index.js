@@ -81,6 +81,9 @@ function searchCityTemp(city) {
 
   axios.get(apiUrl).then(displayWeather);
 }
+let form = document.querySelector("form");
+form.addEventListener("button", searchCityValue);
+form.addEventListener("submit", searchCityValue);
 function showCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#today-temp");
@@ -93,10 +96,6 @@ function showFahrenheitTemperature(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 let celsiusTemperature = null;
-
-let form = document.querySelector("form");
-form.addEventListener("button", searchCityValue);
-form.addEventListener("submit", searchCityValue);
 
 let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
