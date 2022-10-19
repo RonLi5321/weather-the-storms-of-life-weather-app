@@ -66,7 +66,7 @@ function displayWeather(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 function displayWeatherIcon() {
-  if (weatherDescription === "Clear") {
+  if (weatherDescription === "Clear-Sky") {
     document.querySelector(
       "#weather-icon"
     ).style.backgroundImage = `src/images/clear-sky.png`;
