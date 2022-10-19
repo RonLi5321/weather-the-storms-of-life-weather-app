@@ -40,6 +40,7 @@ let months = [
 ];
 let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
+
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = h4.innerHTML;
@@ -90,7 +91,7 @@ function showFahrenheitTemperature(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 let fahrenheitTemperature = null;
-displayForecast();
+
 let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
 let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
