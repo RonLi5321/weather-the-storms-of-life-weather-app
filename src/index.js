@@ -95,7 +95,7 @@ fahrenheitTemp.addEventListener("click", showFahrenheitTemperature);
 function searchCityTemp(city) {
   let units = "imperial";
   let query = "city";
-  let apiKey = `8eddda0f7cctb6ac729734523f46ob41`;
+  let key = `8eddda0f7cctb6ac729734523f46ob41`;
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query={query}&key={key}`;
 }
 axios.get(apiUrl).then(displayWeather);
