@@ -73,28 +73,28 @@ function changeIcon(iconCode) {
   let weatherIcon = "";
 
   if ([`09d`, `09n`, `10d`, `10n`].includes(iconCode)) {
-    weatherIcon = "images/rainy.svg";
+    weatherIcon = "src/images/rainy.svg";
   } else {
     if (iconCode === `01d`) {
-      weatherIcon = "images/day.svg";
+      weatherIcon = "src/images/day.svg";
     } else {
       if (iconCode === `01n`) {
-        weatherIcon = "images/night.svg";
+        weatherIcon = "src/images/night.svg";
       } else {
         if (iconCode === `02d`) {
-          weatherIcon = "images/cloudy-day.svg";
+          weatherIcon = "src/images/cloudy-day.svg";
         } else {
           if (iconCode === `02n`) {
-            weatherIcon = "images/cloudy-night.svg";
+            weatherIcon = "src/images/cloudy-night.svg";
           } else {
             if ([`03d`, `04d`, `03n`, `04n`, `50d`, `50n`].includes(iconCode)) {
-              weatherIcon = "images/cloudy.svg";
+              weatherIcon = "src/images/cloudy.svg";
             } else {
               if ([`11d`, `11n`].includes(iconCode)) {
-                weatherIcon = "images/thunder.svg";
+                weatherIcon = "src/images/thunder.svg";
               } else {
                 if ([`13d`, `13n`].includes(iconCode)) {
-                  weatherIcon = "images/snowy.svg";
+                  weatherIcon = "src/images/snowy.svg";
                 }
               }
             }
