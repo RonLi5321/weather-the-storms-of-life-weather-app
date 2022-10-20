@@ -41,13 +41,15 @@ let months = [
 let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 
-function displayForecast(response){
+function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class = "row>`;
-  forecast.forEach(function (forecastDay, index){
-    if (index < 5){
-      forecastHTML = forecastHTML + `  
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `  
          <div class="col-sm-15">
 <div class="" id="forecast">
           </div>
@@ -57,7 +59,11 @@ function displayForecast(response){
           </div>
          <div class="card-body">
            <img id="second-icon" src="src/images/partlycloudy.png" alt="Rainy"><br>
-           <div class = high-and-low> <span class="temp-high">${Math.round(forecastDay.temp.max)}/</span>  <span class="temp-low">${Math.round(forecastDay.temp.min)}</span> </div>
+           <div class = high-and-low> <span class="temp-high">${Math.round(
+             forecastDay.temp.max
+           )}/</span>  <span class="temp-low">${Math.round(
+          forecastDay.temp.min
+        )}</span> </div>
             <br>
     
             <br>
@@ -65,8 +71,13 @@ function displayForecast(response){
             80%
           </div>
         </div>
-`
+`;
     }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   let humidity = Math.round(response.data.main.humidity);
@@ -78,8 +89,6 @@ function displayWeather(response) {
   let windElement = document.querySelector("#wind-speed");
   let iconElement = document.querySelector("#weather-icon");
   output.innerHTML = response.data.name;
-  fahrenheitTemperature = response.data.main.temp;
-
   outputElement.innerHTML = response.data.name;
   humidElement.innerHTML = `${humidity}%`;
   tempElement.innerHTML = `${temperature}`;
