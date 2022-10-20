@@ -64,6 +64,7 @@ function displayForecast(response) {
             80%
           </div>
         </div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
