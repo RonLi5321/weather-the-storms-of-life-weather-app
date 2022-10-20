@@ -58,6 +58,7 @@ function displayForecast(response) {
             <img class="humidity" src="src/images/humidity.png" alt="Humidity Icon">
             80%
           </div>
+        </div>
         </div>`;
 }
 function displayWeather(response) {
