@@ -47,16 +47,12 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
   forecastHTML =
     forecastHTML +
-    ` <div class="five-day-projection" id="forecast">
-       <div class="row">
-         <div class="col-sm-15">
-          </div>
-          <div class="card" style="width: 12rem;">
-        <div class="card-header text-secondary" > Tomorrow 
-          </div>
-         <div class="card-body">
+    ` <div class="card" style="width: 12rem;">
+        <div class="card-header text-secondary" ><div class="card-body"><div class="col-sm-15">
+    <div class="weather-forecast-date">Thu</div>
            <img id="second-icon" src="src/images/partlycloudy.png" alt="Rainy"><br>
-           <div class = high-and-low> <span class="temp-high">85°F</span>  <span class="temp-low">65°F</span> </div>
+          </div>
+         <div class = high-and-low> <span class="temp-high">85°F</span>  <span class="temp-low">65°F</span> </div>
             <br>
     
             <br>
