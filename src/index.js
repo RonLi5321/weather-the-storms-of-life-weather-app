@@ -61,9 +61,10 @@ function displayForecast(response) {
             <img class="humidity" src="src/images/humidity.png" alt="Humidity Icon">
             80%
           </div>
-        </div>
-        </div>
         </div>`;
+        forecastHTML = `</div>`;
+        forecastHTML = `</div>`;
+        forecastElement.innerHTML =forecastHTML;
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
