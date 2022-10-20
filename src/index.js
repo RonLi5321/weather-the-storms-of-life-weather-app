@@ -41,10 +41,10 @@ let months = [
 let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 
-function displayForecast(response) {
+function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-days.forEach(function(day) {})
+days.forEach(function(day) {
   let forecastHTML = `<div class="row">`;
     if (index<6){
   forecastHTML =
