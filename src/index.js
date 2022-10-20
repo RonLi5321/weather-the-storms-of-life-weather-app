@@ -127,6 +127,20 @@ let form = document.querySelector("form");
 form.addEventListener("button", searchCityValue);
 form.addEventListener("submit", searchCityValue);
 
+function getCurrentLocation(event) {
+  debugger;
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(axiosPosition);
+}
+
+function axiosPosition(position) {
+  let apiKey = "c6f8ef4575250284954db9f4dfa7a996";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showCitySearch);
+}
+
+let currentLocationBtn = document.querySelector("#current-btn");
+currentLocationBtn.addEventListener("click", getCurrentLocation);
 function showCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#today-temp");
