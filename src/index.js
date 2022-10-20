@@ -41,6 +41,32 @@ let months = [
 let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 
+function displayForecast(response){
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class = "row>`;
+  forecast.forEach(function (forecastDay, index){
+    if (index < 5){
+      forecastHTML = forecastHTML + `  
+         <div class="col-sm-15">
+<div class="" id="forecast">
+          </div>
+          <div class="card" style="width: 12rem;">
+        <div class="card-header text-secondary" > 
+        <div class="weather-forecast-date"> ${formatDay(forecastDay.dt)}
+          </div>
+         <div class="card-body">
+           <img id="second-icon" src="src/images/partlycloudy.png" alt="Rainy"><br>
+           <div class = high-and-low> <span class="temp-high">${Math.round(forecastDay.temp.max)}/</span>  <span class="temp-low">${Math.round(forecastDay.temp.min)}</span> </div>
+            <br>
+    
+            <br>
+            <img class="humidity" src="src/images/humidity.png" alt="Humidity Icon">
+            80%
+          </div>
+        </div>
+`
+    }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   let humidity = Math.round(response.data.main.humidity);
