@@ -44,7 +44,7 @@ todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = "Hello";
+  let forecastHTML = `<div class="row">`;
   forecastHTML =
     forecastHTML +
     ` <div class="five-day-projection" id="forecast">
