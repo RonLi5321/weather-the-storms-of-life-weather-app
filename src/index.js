@@ -53,11 +53,10 @@ function displayForecast(response) {
          <div class="col-sm-15">
 <div class="" id="forecast">
           </div>
-          <div class="card" style="width: 12rem;">
-        <div class="card-header text-secondary" > 
+          
         <div class="weather-forecast-date"> ${formatDay(forecastDay.dt)}
           </div>
-         <div class="card-body">
+        
            <img id="second-icon" src="src/images/partlycloudy.png" alt="Rainy"><br>
            <div class = high-and-low> <span class="temp-high">${Math.round(
              forecastDay.temp.max
