@@ -59,6 +59,7 @@ function displayForecast(response) {
             80%
           </div>
         </div>`;
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 function displayWeather(response) {
