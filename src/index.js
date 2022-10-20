@@ -84,7 +84,20 @@ function getForecast(coordinates) {
 
   axios.get(apiUrl).then(displayForecast);
 }
+function searchCityValue(event) {
+  event.preventDefault();
+  let input = document.querySelector("#search-form-input");
+  let output = document.querySelector("#chosen-city");
+  output.innerHTML = input.value;
+  searchCityTemp(input.value);
+}
+function searchCityTemp(city) {
+  let units = "imperial";
+  let apiKey = `b0b9a67412cc5694fd13908f533da803`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
+  axios.get(apiUrl).then(displayWeather);
+}
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   let humidity = Math.round(response.data.main.humidity);
@@ -108,26 +121,12 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   let dateElement = document.querySelector("#todayDate");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  getForecast(response.data.coord);
 }
 
-function searchCityValue(event) {
-  event.preventDefault();
-  let input = document.querySelector("#search-form-input");
-  let output = document.querySelector("#chosen-city");
-  output.innerHTML = input.value;
-  searchCityTemp(input.value);
-}
 let form = document.querySelector("form");
 form.addEventListener("button", searchCityValue);
 form.addEventListener("submit", searchCityValue);
-
-function searchCityTemp(city) {
-  let units = "imperial";
-  let apiKey = `b0b9a67412cc5694fd13908f533da803`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(displayWeather);
-}
 
 function showCelsiusTemperature(event) {
   event.preventDefault();
