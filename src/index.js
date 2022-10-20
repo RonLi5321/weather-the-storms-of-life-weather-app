@@ -41,6 +41,79 @@ let months = [
 let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  // let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      let iconCode = forecastDay.weather[0].icon;
+      forecastHTML =
+        forecastHTML +
+        `  
+         <div class="col-2">
+        <div class="day-item">
+          <div class="week-day">${formatDay(forecastDay.dt)}</div>
+          <img src="${changeIcon(iconCode)}" alt="" width="48" />
+          <div class="day-temperature">${Math.round(
+            forecastDay.temp.day
+          )}°</div>
+        </div>
+      </div>
+      `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+function changeIcon(iconCode) {
+  let weatherIcon = "";
+
+  if ([`09d`, `09n`, `10d`, `10n`].includes(iconCode)) {
+    weatherIcon = "images/rainy.svg";
+  } else {
+    if (iconCode === `01d`) {
+      weatherIcon = "images/day.svg";
+    } else {
+      if (iconCode === `01n`) {
+        weatherIcon = "images/night.svg";
+      } else {
+        if (iconCode === `02d`) {
+          weatherIcon = "images/cloudy-day.svg";
+        } else {
+          if (iconCode === `02n`) {
+            weatherIcon = "images/cloudy-night.svg";
+          } else {
+            if ([`03d`, `04d`, `03n`, `04n`, `50d`, `50n`].includes(iconCode)) {
+              weatherIcon = "images/cloudy.svg";
+            } else {
+              if ([`11d`, `11n`].includes(iconCode)) {
+                weatherIcon = "images/thunder.svg";
+              } else {
+                if ([`13d`, `13n`].includes(iconCode)) {
+                  weatherIcon = "images/snowy.svg";
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return weatherIcon;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "ca0db41e2e878c74a1dfc7ffece370d4";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   output.innerHTML = response.data.name;
