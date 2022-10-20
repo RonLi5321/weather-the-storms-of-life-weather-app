@@ -47,8 +47,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
   forecastHTML =
     forecastHTML +
-    ` <div class="card" style="width: 12rem;">
-        <div class="card-header text-secondary" ><div class="card-body"><div class="col-sm-15">
+    ` <div class="col-sm-15">
     <div class="weather-forecast-date">Thu</div>
            <img id="second-icon" src="src/images/partlycloudy.png" alt="Rainy"><br>
           </div>
