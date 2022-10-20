@@ -59,6 +59,7 @@ function displayForecast(response) {
             80%
           </div>
         </div>
+        </div>
         </div>`;
 }
 function displayWeather(response) {
