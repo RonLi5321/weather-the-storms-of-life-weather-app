@@ -49,8 +49,8 @@ function displayForecast(response) {
     forecastHTML +
     ` <div class="col-sm-15">
     <div class="weather-forecast-date">Thu</div>
-           <img id="second-icon" src="src/images/partlycloudy.png" alt="Rainy"><br>
-          </div>
+           <img id="second-icon" src="src/images/partlycloudy.png" alt="" width="42"/><br>
+      
          <div class = high-and-low> <span class="temp-high">85°F</span>  <span class="temp-low">65°F</span> </div>
             <br>
     
