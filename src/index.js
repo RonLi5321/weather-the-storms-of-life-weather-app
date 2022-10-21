@@ -92,9 +92,9 @@ function showFahrenheitTemperature(event) {
   let temperatureElement = document.querySelector("#today-temp");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
-displayForecast();
-let fahrenheitTemperature = null;
 
+let fahrenheitTemperature = null;
+displayForecast();
 let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
 let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
