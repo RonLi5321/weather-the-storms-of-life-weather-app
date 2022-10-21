@@ -99,13 +99,12 @@ function showCelsiusTemperature(event) {
   let cTemp = (fahrenheitTemperature - 32) / 1.8;
   temperatureElement.innerHTML = Math.round(cTemp);
 }
-displayForecast();
 function showFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#today-temp");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
-
+displayForecast();
 let fahrenheitTemperature = null;
 
 let celsiusTemp = document.querySelector("#celsius-temp");
