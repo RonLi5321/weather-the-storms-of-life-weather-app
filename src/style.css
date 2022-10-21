@@ -108,6 +108,9 @@ a:hover {
   text-align: center;
   margin-left: 60px;
 }
+.forecast-card {
+  margin-right: 20px;
+}
 .form {
   display: block;
   text-align: left;
