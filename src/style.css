@@ -62,6 +62,10 @@ a:hover {
   margin-left: 725px;
   margin-top: 1px;
 }
+.card-body {
+  display: block;
+  text-align: center;
+}
 .card-header {
   display: block;
   text-align: center;
