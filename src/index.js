@@ -83,7 +83,6 @@ function displayWeather(response) {
   let dateElement = document.querySelector("#todayDate");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
-displayForecast();
 function searchCityValue(event) {
   event.preventDefault();
   let input = document.querySelector("#search-form-input");
@@ -91,6 +90,7 @@ function searchCityValue(event) {
   output.innerHTML = input.value;
   searchCityTemp(input.value);
 }
+displayForecast();
 let form = document.querySelector("form");
 form.addEventListener("button", searchCityValue);
 form.addEventListener("submit", searchCityValue);
