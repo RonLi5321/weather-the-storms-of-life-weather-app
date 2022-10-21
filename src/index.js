@@ -78,7 +78,9 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   let dateElement = document.querySelector("#todayDate");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  getForecast(response.data.coord);
 }
+
 function searchCityTemp(city) {
   let units = "imperial";
   let apiKey = `b0b9a67412cc5694fd13908f533da803`;
