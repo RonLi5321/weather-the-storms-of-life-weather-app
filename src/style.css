@@ -41,7 +41,7 @@ a:hover {
   max-width: 85%;
 }
 .button {
-  margin-left: 20px;
+  margin: 0 auto;
 }
 .card-1 {
   background: linear-gradient(
