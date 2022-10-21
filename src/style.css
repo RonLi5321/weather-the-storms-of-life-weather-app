@@ -170,6 +170,10 @@ a:hover {
 .weather-components {
   list-style: none;
 }
+.weather-forecast {
+  margin: 0;
+  padding: 0;
+}
 .weatherlifestorms {
   position: relative;
   object-fit: cover;
