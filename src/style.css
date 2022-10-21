@@ -171,6 +171,8 @@ a:hover {
   list-style: none;
 }
 .weather-forecast {
+  display: block;
+  align-items: center;
   margin: 0;
   padding: 0;
 }
