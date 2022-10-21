@@ -104,7 +104,7 @@ function showFahrenheitTemperature(event) {
   let temperatureElement = document.querySelector("#today-temp");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
-displayForecast();
+
 let fahrenheitTemperature = null;
 
 let celsiusTemp = document.querySelector("#celsius-temp");
