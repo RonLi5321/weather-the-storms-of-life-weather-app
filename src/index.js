@@ -28,8 +28,7 @@ function displayForecast() {
     forecastHTML =
       forecastHTML +
       `<div class="container-fluid">
-      <div class="row">
-    <div class="col-15">
+    <div class="col-5">
      <div class="card" style="width: 12rem;">
         <div class="card-header text-secondary" > ${day} 
           </div>
