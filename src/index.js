@@ -30,10 +30,9 @@ function displayForecast() {
       `
     <div class="col-15">
      <div class="card" style="width: 12rem;">
-        <div class="card-header text-secondary" > Tomorrow 
+        <div class="card-header text-secondary" > ${day} 
           </div>
          <div class="card-body">
-      <div class="weather-forecast-date">${day}</div>
       <img
         src="http://openweathermap.org/img/wn/50d@2x.png"
         alt=""
