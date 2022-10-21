@@ -62,7 +62,9 @@ a:hover {
   margin-left: 725px;
   margin-top: 1px;
 }
-
+.card-body {
+  padding-left: 20px;
+}
 .card-header-reminders {
   padding-top: 20px;
   display: block;
