@@ -23,7 +23,7 @@ function formatDate(timestamp) {
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row cols-1 cols-2">`;
+  let forecastHTML = `<div class="row row-cols-1 row-cols-col-2">`;
 
   forecastHTML =
     forecastHTML +
