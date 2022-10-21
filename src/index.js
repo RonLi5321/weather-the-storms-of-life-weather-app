@@ -69,7 +69,7 @@ function displayWeather(response) {
   let dateElement = document.querySelector("#todayDate");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
-displayForecast();
+
 function searchCityValue(event) {
   event.preventDefault();
   let input = document.querySelector("#search-form-input");
@@ -104,3 +104,4 @@ function searchCityTemp(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
 }
+displayForecast();
