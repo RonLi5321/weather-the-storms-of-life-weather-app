@@ -26,7 +26,8 @@ function displayForecast() {
   let forecastHTML = `<div class="row">`;
   let days = ["Sat", "Sun", "Mon", "Tue"];
   days.forEach(function (day) {
-    forecastHTML +
+    forecastHTML =
+      forecastHTML +
       `<div class="col-2">
     <div class="card" style="width: 12rem;">
      <div class="card-header text-secondary" class="weather-forecast-date">${day}</div>
