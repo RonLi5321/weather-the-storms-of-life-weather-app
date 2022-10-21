@@ -46,7 +46,7 @@ function displayForecast() {
   `;
   forecastHTML =
     forecastHTML +
-    `<div clas="container-fluid">
+    `<div clas="container">
     <div class="col-2">
     <div class="card" style="width: 12rem;">
       <div class="card-header text-secondary" class="weather-forecast-date">Thu</div>
