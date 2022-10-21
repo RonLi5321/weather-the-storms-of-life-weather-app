@@ -172,6 +172,7 @@ a:hover {
 }
 .weather-forecast {
   margin-left: 100px;
+  padding-left: 20px;
 }
 .weatherlifestorms {
   position: relative;
