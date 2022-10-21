@@ -18,7 +18,7 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  return `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 }
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
@@ -35,7 +35,7 @@ function displayForecast() {
      <div class="card-header text-secondary" class="weather-forecast-date">${day}</div>
      <div class="card-body">
       
-      <img
+      <img class="icon"
         src="http://openweathermap.org/img/wn/50d@2x.png"
         alt=""
         width="42"
