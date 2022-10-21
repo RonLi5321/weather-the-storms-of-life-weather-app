@@ -45,7 +45,6 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = "Forecast";
 }
-
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   output.innerHTML = response.data.name;
@@ -70,7 +69,7 @@ function displayWeather(response) {
   let dateElement = document.querySelector("#todayDate");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
-
+displayForecast();
 function searchCityValue(event) {
   event.preventDefault();
   let input = document.querySelector("#search-form-input");
@@ -94,7 +93,7 @@ function showFahrenheitTemperature(event) {
 }
 
 let fahrenheitTemperature = null;
-displayForecast();
+
 let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
 let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
