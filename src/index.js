@@ -28,7 +28,7 @@ function displayForecast() {
   forecastHTML =
     forecastHTML +
     `<div clas="container-fluid">
-    <div class="col-2">
+    <div class="col-sm-2">
     <div class="card" style="width: 12rem;">
       <div class="card-header text-secondary" class="weather-forecast-date">Thu</div>
       <div class="card-body">
@@ -40,6 +40,7 @@ function displayForecast() {
       <div class="weather-forecast-temperatures">
         <span class="weather-forecast-temperature-max">85°F </span>
         <span class="weather-forecast-temperature-min">65°F</span>
+      </div>
       </div>
       </div>
       </div>
@@ -48,7 +49,7 @@ function displayForecast() {
   forecastHTML =
     forecastHTML +
     `<div clas="container">
-    <div class="col-2">
+    <div class="col-sm-2">
     <div class="card" style="width: 12rem;">
       <div class="card-header text-secondary" class="weather-forecast-date">Thu</div>
       <div class="card-body">
@@ -60,6 +61,7 @@ function displayForecast() {
       <div class="weather-forecast-temperatures">
         <span class="weather-forecast-temperature-max">85°F </span>
         <span class="weather-forecast-temperature-min">65°F</span>
+      </div>
       </div>
       </div>
       </div>
