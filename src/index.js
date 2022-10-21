@@ -27,7 +27,7 @@ function displayForecast() {
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `
+      `<div clas="container-fluid">
     <div class="col-2">
       <div class="weather-forecast-date">Thu</div>
       <img
