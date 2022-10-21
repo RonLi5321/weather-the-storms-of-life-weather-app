@@ -93,14 +93,13 @@ function searchCityValue(event) {
 let form = document.querySelector("form");
 form.addEventListener("button", searchCityValue);
 form.addEventListener("submit", searchCityValue);
-
-displayForecast();
 function showCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#today-temp");
   let cTemp = (fahrenheitTemperature - 32) / 1.8;
   temperatureElement.innerHTML = Math.round(cTemp);
 }
+displayForecast();
 function showFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#today-temp");
