@@ -41,24 +41,6 @@ let months = [
 let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = "";
-  <div class="row">
-    <div class="col-2">
-      <div class="weather-forecast-date">Thu</div>
-      <img
-        src="http://openweathermap.org/img/wn/50d@2x.png"
-        alt=""
-        width="42"
-      />
-      <div class="weather-forecast-temperatures">
-        <span class="weather-forecast-temperature-max">85°F </span>
-        <span class="weather-forecast-temperature-min">65°F</span>
-      </div>
-    </div>
-  </div>;
-}
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   output.innerHTML = response.data.name;
@@ -117,3 +99,22 @@ function searchCityTemp(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = "";
+  <div class="row">
+    <div class="col-2">
+      <div class="weather-forecast-date">Thu</div>
+      <img
+        src="http://openweathermap.org/img/wn/50d@2x.png"
+        alt=""
+        width="42"
+      />
+      <div class="weather-forecast-temperatures">
+        <span class="weather-forecast-temperature-max">85°F </span>
+        <span class="weather-forecast-temperature-min">65°F</span>
+      </div>
+    </div>
+  </div>;
+}
+displayForecast();
