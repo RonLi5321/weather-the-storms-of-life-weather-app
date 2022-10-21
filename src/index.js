@@ -41,6 +41,8 @@ function displayForecast() {
         <span class="weather-forecast-temperature-min">65°F</span>
       </div>
     </div>
+  </div>
+  </div>
   </div>`;
   });
   forecastHTML = forecastHTML + `</div>`;
