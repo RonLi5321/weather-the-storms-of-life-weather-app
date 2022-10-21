@@ -172,7 +172,7 @@ a:hover {
 }
 .weather-forecast {
   display: block;
-  align-items: center;
+  align-content: center;
   margin: 0;
   padding: 0;
 }
