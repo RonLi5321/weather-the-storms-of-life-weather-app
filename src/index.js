@@ -29,7 +29,9 @@ function displayForecast() {
       forecastHTML +
       `<div clas="container-fluid">
     <div class="col-2">
-      <div class="weather-forecast-date">Thu</div>
+    <div class="card" style="width: 12rem;">
+      <div class="card-header text-secondary" class="weather-forecast-date">Thu</div>
+      <div class="card-body">
       <img
         src="http://openweathermap.org/img/wn/50d@2x.png"
         alt=""
