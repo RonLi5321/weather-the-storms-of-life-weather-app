@@ -84,6 +84,9 @@ a:hover {
   max-width: 85%;
   max-height: 75%;
 }
+.container-fluid {
+  margin-left: 100px;
+}
 .col-m-8 {
   margin-left: 600px;
 }
