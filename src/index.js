@@ -22,12 +22,12 @@ function formatDate(timestamp) {
 }
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div clas="container-fluid">
+
+  forecastHTML =
+    forecastHTML +
+    `<div clas="container-fluid">
     <div class="col-2">
     <div class="card" style="width: 12rem;">
       <div class="card-header text-secondary" class="weather-forecast-date">Thu</div>
@@ -43,9 +43,9 @@ function displayForecast() {
       </div>
       </div>
   `;
-    forecastHTML =
-      forecastHTML +
-      `<div clas="container-fluid">
+  forecastHTML =
+    forecastHTML +
+    `<div clas="container-fluid">
     <div class="col-2">
     <div class="card" style="width: 12rem;">
       <div class="card-header text-secondary" class="weather-forecast-date">Thu</div>
@@ -61,7 +61,7 @@ function displayForecast() {
       </div>
       </div>
   `;
-  });
+
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
