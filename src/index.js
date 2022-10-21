@@ -23,28 +23,8 @@ function formatDate(timestamp) {
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row row-cols-1 row-cols-2 row-cols-3">`;
+  let forecastHTML = `<div class="row row-cols-1 row-cols-2">`;
 
-  forecastHTML =
-    forecastHTML +
-    `<div class="col-6">
-    <div class="card" style="width: 12rem;">
-     <div class="card-header text-secondary" class="weather-forecast-date">Thu</div>
-     <div class="card-body">
-      
-      <img
-        src="http://openweathermap.org/img/wn/50d@2x.png"
-        alt=""
-        width="42"
-      />
-      <div class="weather-forecast-temperatures">
-        <span class="weather-forecast-temperature-max">85°F </span>
-        <span class="weather-forecast-temperature-min">65°F</span>
-      </div>
-      </div>
-      </div> 
-  
-  `;
   forecastHTML =
     forecastHTML +
     `<div class="col-6">
@@ -79,6 +59,7 @@ function displayForecast() {
       <div class="weather-forecast-temperatures">
         <span class="weather-forecast-temperature-max">85°F </span>
         <span class="weather-forecast-temperature-min">65°F</span>
+      </div>
       </div>
       </div>
       </div>
