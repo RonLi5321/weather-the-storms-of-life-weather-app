@@ -90,7 +90,6 @@ function searchCityValue(event) {
   output.innerHTML = input.value;
   searchCityTemp(input.value);
 }
-displayForecast();
 let form = document.querySelector("form");
 form.addEventListener("button", searchCityValue);
 form.addEventListener("submit", searchCityValue);
@@ -112,6 +111,7 @@ let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
 let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
 fahrenheitTemp.addEventListener("click", showFahrenheitTemperature);
+displayForecast();
 function searchCityTemp(city) {
   let units = "imperial";
   let apiKey = `b0b9a67412cc5694fd13908f533da803`;
