@@ -43,6 +43,7 @@ function displayForecast() {
       </div>
       </div>
       </div> 
+      </div>
   `;
   forecastHTML =
     forecastHTML +
@@ -58,6 +59,7 @@ function displayForecast() {
       <div class="weather-forecast-temperatures">
         <span class="weather-forecast-temperature-max">85°F </span>
         <span class="weather-forecast-temperature-min">65°F</span>
+      </div>
       </div>
       </div>
       </div>
