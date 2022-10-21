@@ -49,6 +49,7 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
 }
+displayForecast();
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   output.innerHTML = response.data.name;
