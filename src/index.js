@@ -35,8 +35,6 @@ function displayForecast() {
          <div class="card-body">
       <img
         src="http://openweathermap.org/img/wn/50d@2x.png"
-        alt=""
-        width="42"
       />
       <div class="weather-forecast-temperatures">
         <span class="weather-forecast-temperature-max">85°F </span>
