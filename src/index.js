@@ -22,8 +22,12 @@ function formatDate(timestamp) {
 }
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = `
-  <div class="row">
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  let forecastHTML = `div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="row">
     <div class="col-2">
       <div class="weather-forecast-date">Thu</div>
       <img
@@ -37,6 +41,10 @@ function displayForecast() {
       </div>
     </div>
   </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
