@@ -27,7 +27,7 @@ function displayForecast() {
 
   forecastHTML =
     forecastHTML +
-    `<div class="col-6">
+    `<div class="col-15">
     <div class="card" style="width: 12rem;">
      <div class="card-header text-secondary" class="weather-forecast-date">Thu</div>
      <div class="card-body">
@@ -47,7 +47,7 @@ function displayForecast() {
   `;
   forecastHTML =
     forecastHTML +
-    `<div class="col-6">
+    `<div class="col-15">
     <div class="card" style="width: 12rem;">
       <div class="card-header text-secondary" class="weather-forecast-date">Thu</div>
       <div class="card-body">
