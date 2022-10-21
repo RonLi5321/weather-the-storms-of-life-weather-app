@@ -101,7 +101,7 @@ function searchCityTemp(city) {
 }
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = "";
+  forecastElement.innerHTML = `
   <div class="row">
     <div class="col-2">
       <div class="weather-forecast-date">Thu</div>
@@ -115,6 +115,6 @@ function displayForecast() {
         <span class="weather-forecast-temperature-min">65°F</span>
       </div>
     </div>
-  </div>;
+  </div>`;
 }
 displayForecast();
