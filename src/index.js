@@ -34,7 +34,7 @@ function formatDate(timestamp) {
   ];
   let month = months[now.getMonth()];
   let year = now.getFullYear();
-  return `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
+  todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 }
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
