@@ -59,7 +59,6 @@ function displayForecast() {
     </div>
   </div>`;
 }
-displayForecast();
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   output.innerHTML = response.data.name;
@@ -84,6 +83,7 @@ function displayWeather(response) {
   let dateElement = document.querySelector("#todayDate");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
+displayForecast();
 function searchCityValue(event) {
   event.preventDefault();
   let input = document.querySelector("#search-form-input");
