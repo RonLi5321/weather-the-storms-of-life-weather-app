@@ -43,14 +43,18 @@ function displayForecast() {
     </div>
   </div>
   </div>
-  </div>
   </div>`;
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
 }
-displayForecast();
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = `b0b9a67412cc5694fd13908f533da803`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   output.innerHTML = response.data.name;
@@ -111,5 +115,3 @@ let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
 let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
 fahrenheitTemp.addEventListener("click", showFahrenheitTemperature);
-
-displayForecast();
