@@ -129,6 +129,10 @@ a:hover {
   text-align: center;
   width: 20px;
 }
+.icon {
+  margin: 0 auto;
+  padding: 0 auto;
+}
 .li {
   font-size: 16px;
 }
@@ -176,6 +180,9 @@ a:hover {
 .weather-forecast {
   margin-left: 100px;
   padding-left: 20px;
+}
+.weather-forecast-date {
+  text-align: center;
 }
 .weatherlifestorms {
   position: relative;
