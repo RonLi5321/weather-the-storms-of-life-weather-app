@@ -90,10 +90,11 @@ function searchCityValue(event) {
   output.innerHTML = input.value;
   searchCityTemp(input.value);
 }
-displayForecast();
 let form = document.querySelector("form");
 form.addEventListener("button", searchCityValue);
 form.addEventListener("submit", searchCityValue);
+
+displayForecast();
 function showCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#today-temp");
