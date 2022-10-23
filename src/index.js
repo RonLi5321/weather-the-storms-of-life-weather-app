@@ -41,7 +41,6 @@ let months = [
 let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 function displayForecast() {
-  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -57,7 +56,7 @@ function displayForecast() {
      <div class="card-body">
       
       <img class="icon"
-        src=""http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png"
+        src="http://openweathermap.org/img/wn/50d@2x.png"
         alt=""
         width="42"
       />
@@ -71,55 +70,48 @@ function displayForecast() {
   </div>
   `;
   });
+
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
 }
-
 function getForecast(coordinates) {
   console.log(coordinates);
-  let key = `8eddda0f7cctb6ac729734523f46ob41`;
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}}&units=imperial`;
+  let apiKey = `b0b9a67412cc5694fd13908f533da803`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
-
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
-  output.innerHTML = response.data.city;
-  let humidity = Math.round(response.data.temperature.humidity);
+  output.innerHTML = response.data.name;
+  let humidity = Math.round(response.data.main.humidity);
   let humidElement = document.querySelector("#today-humidity");
   humidElement.innerHTML = `${humidity}%`;
-  fahrenheitTemperature = response.data.temperature.current;
+  fahrenheitTemperature = response.data.main.temp;
   let temperature = Math.round(fahrenheitTemperature);
   let tempElement = document.querySelector("#today-temp");
   tempElement.innerHTML = `${temperature}`;
   let descriptionElement = document.querySelector("#weather-description");
-  descriptionElement.innerHTML = response.data.condition.description;
+  descriptionElement.innerHTML = response.data.weather[0].description;
   let wind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = `${wind}km/hr`;
   let iconElement = document.querySelector("#weather-icon");
   iconElement.setAttribute(
     "src",
-    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   let dateElement = document.querySelector("#todayDate");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  getForecast(response.data.coordinates);
+  getForecast(response.data.coord);
 }
 
 function searchCityTemp(city) {
-  let key = `8eddda0f7cctb6ac729734523f46ob41`;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=imperial`;
+  let units = "imperial";
+  let apiKey = `b0b9a67412cc5694fd13908f533da803`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
-}
-function showPosition(position) {
-  let key = `8eddda0f7cctb6ac729734523f46ob41`;
-  let lon = position.coords.longitude;
-  let lat = position.coords.latitude;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${key}&units=imperial`;
-  axios.get(apiUrl).then(cityTemperature);
 }
 
 function searchCityValue(event) {
