@@ -40,23 +40,20 @@ let months = [
 ];
 let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
-function displayForecast(response) {
-  let forecast = response.data.daily;
+function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
-      forecastHTML =
-        forecastHTML +
-        `<div class="col-sm-2">
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-sm-2">
     <div class="card" style="width: 12rem;">
-     <div class="card-header text-secondary" class="weather-forecast-date">${formatDay(
-       forecastDay.time
-     )}</div>
+     <div class="card-header text-secondary" class="weather-forecast-date">${day}</div>
      <div class="card-body">
       
-      <img class="emoji"
+      <img
         src="http://openweathermap.org/img/wn/50d@2x.png"
         alt=""
         width="42"
@@ -69,13 +66,13 @@ function displayForecast(response) {
   </div>
   </div>
   `;
-    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
 }
+
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = `b0b9a67412cc5694fd13908f533da803`;
