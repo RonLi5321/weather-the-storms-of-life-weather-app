@@ -38,8 +38,9 @@ function displayForecast(response) {
   console.log(forecastHTML);
 }
 function getForecast(coordinates){
-  let apiKey = `a43564c91a6c605aeb564c9ed02e3858`;
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&&appid=${apiKey}&units=imperial;
+  let apiKey = `function getForecast(coordinates) {
+  let apiKey = "0fbf741dd6f046088a411342ceb1813f";
+ let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&&appid=${apiKey}&units=imperial`;
 axios.get(apiUrl).then(displayForecast);
 console.log(apiUrl);
 }
