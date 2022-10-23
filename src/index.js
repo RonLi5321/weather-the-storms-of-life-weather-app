@@ -45,11 +45,11 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col-sm-2">
       <div class="forecast-card">
     <div class="card" style="width: 12rem;">
@@ -57,7 +57,7 @@ function displayForecast() {
      <div class="card-body">
       
       <img class="icon"
-        src="http://openweathermap.org/img/wn/50d@2x.png"
+        src=""http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png"
         alt=""
         width="42"
       />
@@ -70,6 +70,7 @@ function displayForecast() {
   </div>
   </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
