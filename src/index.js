@@ -55,6 +55,7 @@ function displayWeather(response) {
   let temperature = Math.round(fahrenheitTemperature);
   let tempElement = document.querySelector("#today-temp");
   tempElement.innerHTML = `${temperature}`;
+  getForecast(response.data.coord);
   let descriptionElement = document.querySelector("#weather-description");
   descriptionElement.innerHTML = response.data.weather[0].description;
   let wind = Math.round(response.data.wind.speed);
@@ -68,8 +69,6 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   let dateElement = document.querySelector("#todayDate");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-
-  getForecast(response.data.coord);
 }
 
 function searchCityTemp(city) {
