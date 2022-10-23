@@ -41,21 +41,19 @@ let months = [
 let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 function displayForecast() {
-  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
 
-  forecast.forEach(function (forecastDay) {
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `
-      <div class="col-sm-2">
-      <div class="forecast-card">
+      `<div class="col-sm-2">
     <div class="card" style="width: 12rem;">
-     <div class="card-header text-secondary" class="weather-forecast-date">${forecastDay.time}</div>
+     <div class="card-header text-secondary" class="weather-forecast-date">${day}</div>
      <div class="card-body">
       
-      <img class="icon"
+      <img
         src="http://openweathermap.org/img/wn/50d@2x.png"
         alt=""
         width="42"
@@ -65,7 +63,6 @@ function displayForecast() {
         <span class="weather-forecast-temperature-min">65°F</span>
       </div>
       </div>
-  </div>
   </div>
   </div>
   `;
