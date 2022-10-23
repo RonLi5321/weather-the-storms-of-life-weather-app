@@ -87,7 +87,7 @@ function displayWeather(response) {
   let humidity = Math.round(response.data.temperature.humidity);
   let humidElement = document.querySelector("#today-humidity");
   humidElement.innerHTML = `${humidity}%`;
-  fahrenheitTemperature = response.data.main.current;
+  fahrenheitTemperature = response.data.temperature.current;
   let temperature = Math.round(fahrenheitTemperature);
   let tempElement = document.querySelector("#today-temp");
   tempElement.innerHTML = `${temperature}`;
