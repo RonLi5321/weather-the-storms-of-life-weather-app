@@ -72,7 +72,12 @@ function displayForecast() {
   `;
     }
   });
-
+  function getForecast(coordinates) {
+    console.log(coordinates);
+    let key = `8eddda0f7cctb6ac729734523f46ob41`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}}&units=imperial`;
+    axios.get(apiUrl).then(displayForecast);
+  }
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
@@ -117,12 +122,6 @@ function showPosition(position) {
   axios.get(apiUrl).then(cityTemperature);
 }
 
-function getForecast(coordinates) {
-  console.log(coordinates);
-  let key = `8eddda0f7cctb6ac729734523f46ob41`;
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}}&units=imperial`;
-  axios.get(apiUrl).then(displayForecast);
-}
 function searchCityValue(event) {
   event.preventDefault();
   let input = document.querySelector("#search-form-input");
