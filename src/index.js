@@ -43,10 +43,17 @@ todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = `
-  <div class="row">
-    <div class="col-2">
-      <div class="weather-forecast-date">Thu</div>
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-sm-2">
+    <div class="card" style="width: 12rem;">
+     <div class="card-header text-secondary" class="weather-forecast-date">${day}</div>
+     <div class="card-body">
+      
       <img
         src="http://openweathermap.org/img/wn/50d@2x.png"
         alt=""
@@ -56,8 +63,15 @@ function displayForecast() {
         <span class="weather-forecast-temperature-max">85°F </span>
         <span class="weather-forecast-temperature-min">65°F</span>
       </div>
-    </div>
-  </div>`;
+      </div>
+  </div>
+  </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
