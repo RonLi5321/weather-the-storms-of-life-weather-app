@@ -83,23 +83,23 @@ function getForecast(coordinates) {
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
-  output.innerHTML = response.data.name;
-  let humidity = Math.round(response.data.main.humidity);
+  output.innerHTML = response.data.city;
+  let humidity = Math.round(response.data.temperature.humidity);
   let humidElement = document.querySelector("#today-humidity");
   humidElement.innerHTML = `${humidity}%`;
-  fahrenheitTemperature = response.data.main.temp;
+  fahrenheitTemperature = response.data.main.current;
   let temperature = Math.round(fahrenheitTemperature);
   let tempElement = document.querySelector("#today-temp");
   tempElement.innerHTML = `${temperature}`;
   let descriptionElement = document.querySelector("#weather-description");
-  descriptionElement.innerHTML = response.data.weather[0].description;
+  descriptionElement.innerHTML = response.data.condition.description;
   let wind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = `${wind}km/hr`;
   let iconElement = document.querySelector("#weather-icon");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `http://openweathermap.org/img/wn/${response.data.condition.icon}`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   let dateElement = document.querySelector("#todayDate");
