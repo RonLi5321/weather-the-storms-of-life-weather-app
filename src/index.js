@@ -107,6 +107,14 @@ function searchCityTemp(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=imperial`;
   axios.get(apiUrl).then(displayWeather);
 }
+function showPosition(position) {
+  let key = `8eddda0f7cctb6ac729734523f46ob41`;
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${key}&units=imperial`;
+  axios.get(apiUrl).then(cityTemperature);
+}
+
 function getForecast(coordinates) {
   console.log(coordinates);
   let key = `8eddda0f7cctb6ac729734523f46ob41`;
