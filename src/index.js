@@ -40,7 +40,6 @@ let months = [
 ];
 let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
-
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
@@ -49,12 +48,14 @@ function displayForecast() {
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `<div class="col-sm-2">
+      `
+      <div class="col-sm-2">
+      <div class="forecast-card">
     <div class="card" style="width: 12rem;">
      <div class="card-header text-secondary" class="weather-forecast-date">${day}</div>
      <div class="card-body">
       
-      <img
+      <img class="icon"
         src="http://openweathermap.org/img/wn/50d@2x.png"
         alt=""
         width="42"
@@ -66,12 +67,19 @@ function displayForecast() {
       </div>
   </div>
   </div>
+  </div>
   `;
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
+}
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = `b0b9a67412cc5694fd13908f533da803`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
@@ -96,7 +104,16 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   let dateElement = document.querySelector("#todayDate");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  getForecast(response.data.coord);
 }
+
+function searchCityTemp(city) {
+  let units = "imperial";
+  let apiKey = `b0b9a67412cc5694fd13908f533da803`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayWeather);
+}
+
 function searchCityValue(event) {
   event.preventDefault();
   let input = document.querySelector("#search-form-input");
@@ -104,9 +121,6 @@ function searchCityValue(event) {
   output.innerHTML = input.value;
   searchCityTemp(input.value);
 }
-let form = document.querySelector("form");
-form.addEventListener("button", searchCityValue);
-form.addEventListener("submit", searchCityValue);
 function showCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#today-temp");
@@ -121,13 +135,13 @@ function showFahrenheitTemperature(event) {
 
 let fahrenheitTemperature = null;
 
+let form = document.querySelector("form");
+form.addEventListener("button", searchCityValue);
+form.addEventListener("submit", searchCityValue);
+
 let celsiusTemp = document.querySelector("#celsius-temp");
 celsiusTemp.addEventListener("click", showCelsiusTemperature);
 let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
 fahrenheitTemp.addEventListener("click", showFahrenheitTemperature);
-function searchCityTemp(city) {
-  let units = "imperial";
-  let apiKey = `b0b9a67412cc5694fd13908f533da803`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(displayWeather);
-}
+
+displayForecast();
