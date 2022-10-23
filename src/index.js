@@ -75,12 +75,7 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
 }
-function getForecast(coordinates) {
-  console.log(coordinates);
-  let apiKey = `b0b9a67412cc5694fd13908f533da803`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
-  axios.get(apiUrl).then(displayForecast);
-}
+
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   output.innerHTML = response.data.city;
@@ -112,7 +107,12 @@ function searchCityTemp(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=imperial`;
   axios.get(apiUrl).then(displayWeather);
 }
-
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let key = `8eddda0f7cctb6ac729734523f46ob41`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function searchCityValue(event) {
   event.preventDefault();
   let input = document.querySelector("#search-form-input");
