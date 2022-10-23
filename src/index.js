@@ -106,7 +106,7 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   let dateElement = document.querySelector("#todayDate");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  getForecast(response.data.coord);
+  getForecast(response.data.coordinates);
 }
 
 function searchCityTemp(city) {
