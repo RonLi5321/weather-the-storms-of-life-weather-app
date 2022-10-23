@@ -47,7 +47,6 @@ function displayWeather(response) {
   let temperature = Math.round(fahrenheitTemperature);
   let tempElement = document.querySelector("#today-temp");
   tempElement.innerHTML = `${temperature}`;
-  getForecast(response.data.coord);
   let descriptionElement = document.querySelector("#weather-description");
   descriptionElement.innerHTML = response.data.weather[0].description;
   let wind = Math.round(response.data.wind.speed);
