@@ -36,6 +36,7 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+displayForecast();
 function getForecast(coordinates) {
   let apiKey = "0fbf741dd6f046088a411342ceb1813f";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&&appid=${apiKey}&units=imperial`;
