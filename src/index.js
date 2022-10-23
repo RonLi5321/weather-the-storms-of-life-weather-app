@@ -72,6 +72,12 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
 }
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "6146e85416f7bd223c2eb51876266123";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
   output.innerHTML = response.data.name;
