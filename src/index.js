@@ -22,8 +22,8 @@ function displayForecast(response) {
         width="42"
       />
       <div class="weather-forecast-temperatures">
-        <span class="weather-forecast-temperature-max">85°F </span>
-        <span class="weather-forecast-temperature-min">65°F</span>
+        <span class="weather-forecast-temperature-max">${Math.round(forecastDay.temp.max)}</span>
+        <span class="weather-forecast-temperature-min">${Math.round(forecastDay.temp.min)}</span>
       </div>
       </div>
   </div>
@@ -38,9 +38,10 @@ function displayForecast(response) {
   console.log(forecastHTML);
 }
 function getForecast(coordinates){
-  let apiKey = `b0b9a67412cc5694fd13908f533da803`;
+  let apiKey = `a43564c91a6c605aeb564c9ed02e3858`;
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&&appid=${apiKey}&units=imperial;
 axios.get(apiUrl).then(displayForecast);
+console.log(apiUrl);
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
