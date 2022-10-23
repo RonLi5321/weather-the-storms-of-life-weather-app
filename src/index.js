@@ -4,14 +4,16 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
   let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  let forecast = response.data.daily;
+  forecast.foreach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col-sm-2">
       <div class="forecast-card">
     <div class="card" style="width: 12rem;">
-     <div class="card-header text-secondary" class="weather-forecast-date">${day}</div>
+     <div class="card-header text-secondary" class="weather-forecast-date">${days[index]}</div>
      <div class="card-body">
       
       <img class="icon"
@@ -28,6 +30,7 @@ function displayForecast(response) {
   </div>
   </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
