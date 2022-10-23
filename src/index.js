@@ -40,18 +40,17 @@ let months = [
 ];
 let month = months[now.getMonth()];
 todayDate.innerHTML = `${day}, ${month} ${date}, ${year} ${hours}:${minutes}`;
-function displayForecast(response) {
-  let forecast = response.data.daily;
+function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
   let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
-  forecast.forEach(function (forecastDay) {
+  days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `<div class="col-sm-2">
     <div class="card" style="width: 12rem;">
-     <div class="card-header text-secondary" class="weather-forecast-date">${forecastDay.dt}</div>
+     <div class="card-header text-secondary" class="weather-forecast-date">${day}</div>
      <div class="card-body">
       
       <img
