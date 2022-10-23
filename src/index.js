@@ -74,7 +74,7 @@ function displayWeather(response) {
 
 function searchCityTemp(city) {
   let units = "imperial";
-  let apiKey = `b0b9a67412cc5694fd13908f533da803`;
+  let apiKey = `0d2ff1fdb178db118c1c85b67e0f675e`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
 }
