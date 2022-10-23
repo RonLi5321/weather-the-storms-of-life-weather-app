@@ -99,7 +99,7 @@ function displayWeather(response) {
   let iconElement = document.querySelector("#weather-icon");
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.condition.icon}`
+    `http://openweathermap.org/img/wn/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   let dateElement = document.querySelector("#todayDate");
