@@ -45,11 +45,11 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
-      forecastHTML =
-        forecastHTML +
-        `
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
       <div class="col-sm-2">
       <div class="forecast-card">
     <div class="card" style="width: 12rem;">
@@ -70,7 +70,6 @@ function displayForecast() {
   </div>
   </div>
   `;
-    }
   });
   function getForecast(coordinates) {
     console.log(coordinates);
