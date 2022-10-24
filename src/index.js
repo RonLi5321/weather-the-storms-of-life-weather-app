@@ -46,7 +46,7 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay, index) {
+  forecast.forEach(function (day, index) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
@@ -58,18 +58,16 @@ function displayForecast(response) {
      <div class="card-body">
       
       <img
-        src="http://openweathermap.org/img/wn/${
-          forecastDay.weather[0].icon
-        }d@2x.png"
+        src="http://openweathermap.org/img/wn/${day.weather[0].icon}d@2x.png"
         alt=""
         width="42"
       />
       <div class="weather-forecast-temperatures">
         <span class="weather-forecast-temperature-max">${Math.round(
-          forecastDay.temp.max
+          day.temp.max
         )}°</span>
         <span class="weather-forecast-temperature-min">${Math.round(
-          forecastDay.temp.min
+          day.temp.min
         )}°</span>
       </div>
       </div>
