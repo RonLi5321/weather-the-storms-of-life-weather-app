@@ -49,7 +49,7 @@ function formatDay(timestamp) {
   return days[day];
 }
 function displayForecast(response) {
-  let forecast = response.data.city;
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
@@ -64,9 +64,8 @@ function displayForecast(response) {
      <div class="card-body">
       
       <img
-         src=""http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-           forecastDay.condition[0].icon
-         }.png"
+        src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
         }@2x.png"
         alt=""
         width="42"
@@ -93,29 +92,29 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   console.log(coordinates);
-  let key = `e947cb2640f1db92e6a19005bc43b435`;
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}}&units=imperial`;
+  let apiKey = `e947cb2640f1db92e6a19005bc43b435`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
 function displayWeather(response) {
   let output = document.querySelector("#chosen-city");
-  output.innerHTML = response.data.city;
-  let humidity = Math.round(response.data.temperature.humidity);
+  output.innerHTML = response.data.name;
+  let humidity = Math.round(response.data.main.humidity);
   let humidElement = document.querySelector("#today-humidity");
   humidElement.innerHTML = `${humidity}%`;
-  fahrenheitTemperature = response.data.temperature.current;
+  fahrenheitTemperature = response.data.main.temp;
   let temperature = Math.round(fahrenheitTemperature);
   let tempElement = document.querySelector("#today-temp");
   tempElement.innerHTML = `${temperature}`;
   let descriptionElement = document.querySelector("#weather-description");
-  descriptionElement.innerHTML = response.data.daily.condition.description;
+  descriptionElement.innerHTML = response.data.weather[0].description;
   let wind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind-speed");
   windElement.innerHTML = `${wind}km/hr`;
   let iconElement = document.querySelector("#weather-icon");
   iconElement.setAttribute(
     "src",
-    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   let dateElement = document.querySelector("#todayDate");
