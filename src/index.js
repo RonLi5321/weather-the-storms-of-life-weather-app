@@ -64,7 +64,7 @@ function displayForecast(response) {
      <div class="card-body">
       
       <img
-        src="images/${forecastDay.weather[0].icon}.png
+        src="src/images/${forecastDay.weather[0].icon}.png
         alt=""
         width="42"
       />
