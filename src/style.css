@@ -69,6 +69,10 @@ a:hover {
   display: block;
   text-align: center;
 }
+.card-body-reminders {
+  display: block;
+  text-align: left;
+}
 .card-header {
   display: block;
   text-align: center;
