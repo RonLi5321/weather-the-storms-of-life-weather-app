@@ -117,7 +117,6 @@ function displayWeather(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
   getForecast(response.data.coord);
 }
 
