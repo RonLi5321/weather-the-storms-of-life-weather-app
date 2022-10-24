@@ -122,12 +122,6 @@ a:hover {
   text-align: center;
   margin-left: 60px;
 }
-.forecast-temperature-max {
-  color: orangered;
-}
-.forecast-temperature-min {
-  color: skyblue;
-}
 .form {
   display: block;
   text-align: left;
@@ -201,6 +195,12 @@ a:hover {
 .weather-forecast-date {
   display: block;
   text-align: center;
+}
+.weather-forecast-temperature-max {
+  color: orangered;
+}
+.weather-forecast-temperature-min {
+  color: skyblue;
 }
 .weatherlifestorms {
   position: relative;
