@@ -42,7 +42,7 @@ function formatDate(timestamp) {
 let todayDate = document.querySelector("#todayDate");
 todayDate.innerHTML = formatDate(new Date());
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
